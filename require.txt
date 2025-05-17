@@ -3,3 +3,4 @@ os
 json
 spicy
 numpy
+pyhton 3.12.6
