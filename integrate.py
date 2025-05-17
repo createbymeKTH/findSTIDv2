@@ -52,10 +52,10 @@ for i, subd in enumerate(sub):
         row = {}
         if setudentID["show"]:
             row['Id'] = ppl[setudentID["column"]-1]
-        if studentname["show"]:
-            row['Name'] = ppl[studentname["column"]-1]
         if studentclass["show"]:
             row['Class'] = ppl[studentclass["column"]-1]
+        if studentname["show"]:
+            row['Name'] = ppl[studentname["column"]-1]
         if setting["class"] :
             row['class'] = ppl[2]
         if setting["xi"]:
