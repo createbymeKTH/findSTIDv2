@@ -10,8 +10,8 @@ sub = integrateconfig['subjects']
 outputfilename = integrateconfig['outputfilename']
 setting = integrateconfig['setting']
 setudentID = setting['studentID']
-studentname = setting['studentname']
-studentclass = setting['studentclass']
+setudentID = setting['studentname']
+setudentID = setting['studentID']
 if integrateconfig['read'] == 'yes':
     whatdoyouwanttoread = os.listdir('incsv')
     get = input("ลำดับที่ต้องการอ่าน (ใส่เป็นจำนวนนับ): ")
@@ -49,13 +49,12 @@ data = []
 totalpoint = np.sum(np.array(subjectopoit),axis=0)
 for i, subd in enumerate(sub):
     for index, ppl in enumerate(dfvalues):
-        row = {}
+        row = {
+            'Id': ppl[0],
+            'Name': ppl[1]}
         if setudentID["show"]:
             row['Id'] = ppl[setudentID["column"]-1]
-        if studentname["show"]:
-            row['Name'] = ppl[studentname["column"]-1]
-        if studentclass["show"]:
-            row['Class'] = ppl[studentclass["column"]-1]
+        if 
         if setting["class"] :
             row['class'] = ppl[2]
         if setting["xi"]:

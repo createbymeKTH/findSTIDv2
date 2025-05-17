@@ -15,20 +15,6 @@
         "percentile":true,
         "xipercentile":true,
         "xi":true,
-        "xipercent":true,
-        "class":true,
-        "studentID":{
-            "show":true,
-            "column":1
-        },
-        "studentname":{
-            "show":true,
-            "column":2
-        },
-        "studentclass":{
-            "show":false,
-            "column":3
-        }
-        
+        "xipercent":false
     }
 }
