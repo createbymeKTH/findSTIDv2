@@ -2,7 +2,6 @@ import pandas as pd
 import os,json
 from scipy import stats
 import numpy as np
-
 with open('integrateconfig.json', 'r') as f:
     integrateconfig = json.load(f)
 startcount = integrateconfig['startcountdf']
