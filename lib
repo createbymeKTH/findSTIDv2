@@ -1,6 +1,6 @@
 pandas
 os
 json
-spicy
+scipy
 numpy
-pyhton 3.12.6
+matplotlib
