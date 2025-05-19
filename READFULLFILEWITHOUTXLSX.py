@@ -2,7 +2,7 @@ import pandas as pd
 import os,json
 import matplotlib.pyplot as plt
 import numpy as np
-with open('config.json', 'r') as f:
+with open('cpnfig/config.json', 'r') as f:
     config = json.load(f)
 with open('request/request.json', 'r') as f:
     request = json.load(f)

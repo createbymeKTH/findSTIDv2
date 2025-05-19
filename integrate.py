@@ -4,7 +4,7 @@ from scipy import stats
 import numpy as np
 import matplotlib.pyplot as plt
 import numpy as np
-with open('integrateconfig.json', 'r') as f:
+with open('config/integrateconfig.json', 'r') as f:
     integrateconfig = json.load(f)
 with open('request/request.json', 'r') as f:
     request = json.load(f)
