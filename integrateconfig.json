@@ -1,13 +1,15 @@
 {
-    "startcountdf":3,
+    "startcountdf":4,
     "read":"yes",
     "subjects":[
         {"name":"physics","max":100},
-        {"name":"chemistry","max":100}
+        {"name":"chemistry","max":100},
+        {"name":"chemistry1","max":100}
     ],
     "outputfilename":"output",
     "setting":{
         "totalpoint":true,
+        "totalmax":true,
         "totalpoint percent":true,
         "total percentile":true,
         "totalzscore":true,
@@ -16,17 +18,22 @@
         "xipercentile":true,
         "xi":true,
         "xipercent":true,
-        "class":true,
+        "ximax":true,
+
         "studentID":{
             "show":true,
             "column":1
         },
+
+
         "studentname":{
             "show":true,
             "column":2
         },
+
+        
         "studentclass":{
-            "show":false,
+            "show":true,
             "column":3
         }
         

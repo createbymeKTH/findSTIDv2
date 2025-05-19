@@ -1,4 +1,0 @@
-subject,Mean,Standard Deviation,Maximum,Minimum,mode,Xbar
-physics,14.333333333333334,6.599663291074444,19,5,"ModeResult(mode=19, count=2)",14.333333333333334
-chemistry,68.66666666666667,22.15601247717849,100,53,"ModeResult(mode=53, count=2)",68.66666666666667
-ALLSUBJECT,83.0,15.556349186104045,105,72,"ModeResult(mode=72, count=2)",83.0
