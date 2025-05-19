@@ -48,9 +48,9 @@ if (df.iloc[:, 0] == get).any():
         labels=names, 
         fontsize=8
     )
-    plt.title("People vs Features", fontsize=10)
-    plt.xlabel("Feature", fontsize=9)
-    plt.ylabel("Person", fontsize=9)
+    plt.title("Students vs Sujects", fontsize=10)
+    plt.xlabel("Suject", fontsize=9)
+    plt.ylabel("Student", fontsize=9)
 
     for i in range(values.shape[0]):
         for j in range(values.shape[1]):
