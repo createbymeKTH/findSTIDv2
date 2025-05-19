@@ -12,7 +12,7 @@ with open('request/request.json', 'r') as f:
         request = json.load(f)
 def startintegrate():
     request["SID"] = input_text.get("1.0", "end-1c")
-    request["file"] = input_text1.get("1.0", "end-1c")
+    request["fileconvert"] = input_text1.get("1.0", "end-1c")
     current_directory = os.getcwd()
     print(current_directory)
 

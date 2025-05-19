@@ -1,5 +1,6 @@
 {
     "SID": "62242",
     "sets": true,
-    "file": "output"
+    "file": "output",
+    "fileconvert": "das"
 }

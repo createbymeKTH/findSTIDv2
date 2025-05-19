@@ -22,8 +22,8 @@ if integrateconfig['read'] == 'yes' and not request['sets']:
     print(f"คุณเลือกไฟล์ที่ {whatdoyouwanttoread[int(get) - 1]}")
     df = pd.read_csv(f'incsv/{whatdoyouwanttoread[int(get) - 1]}')
 else:
-    print(request['file'])
-    df = pd.read_csv(f'incsv/{request['file']}.csv')
+    print(request['fileconvert'])
+    df = pd.read_csv(f'incsv/{request['fileconvert']}.csv')
 dfvalues = df.values
 print(dfvalues)
 subjectopoit = []
