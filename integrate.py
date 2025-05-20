@@ -23,7 +23,7 @@ if integrateconfig['read'] == 'yes' and not request['sets']:
     df = pd.read_csv(f'incsv/{whatdoyouwanttoread[int(get) - 1]}')
 else:
     print(request['fileconvert'])
-    df = pd.read_csv(f'incsv/{request['fileconvert']}.csv')
+    df = pd.read_csv(rf'{request['fileconvert']}')
 dfvalues = df.values
 print(dfvalues)
 subjectopoit = []
@@ -114,7 +114,7 @@ df = pd.DataFrame(data)
 df_clean = df.groupby(['Id', 'Name'], as_index=False).first()
 df_clean= df_clean.sort_values(by='totalpoint', ascending=False)
 df_clean.to_csv(f'store csv/{outputfilename}.csv', index=False)
-
+df_clean.to_csv(rf"{request["folder"]}/{outputfilename}.csv", index=False)
 SD = np.std(totalpoint)
 mean = np.mean(totalpoint)
 maximum = np.max(totalpoint)
@@ -152,7 +152,7 @@ data.append({"subject": "ALLSUBJECT",
              f"Xbar": np.round(xbar,2)})
 df = pd.DataFrame(data)
 df.to_csv(f'outcsv/SDMODERANGEXBARMAXIMUMMINIMUM.csv', index=False)
-
+df.to_csv(rf"{request["folder"]}/SDMODERANGEXBARMAXIMUMMINIMUM.csv", index=False)
 print(f"Standard Deviation: {SD}")
 print(f"Mean: {mean}")
 print(f"Maximum: {maximum}")
@@ -161,6 +161,7 @@ print(f"Mode: {mode}")
 print(f"Xbar: {xbar}")
 df = df = pd.DataFrame(todatarow)
 df.to_csv(f'outcsv/data.csv', index=False)
+df.to_csv(rf"{request["folder"]}/data.csv", index=False)
 dff = pd.read_csv(f'outcsv/data.csv')
 df = pd.read_csv("outcsv/SDMODERANGEXBARMAXIMUMMINIMUM.csv")
 print(df)

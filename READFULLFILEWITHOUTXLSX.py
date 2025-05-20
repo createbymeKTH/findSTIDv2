@@ -14,8 +14,11 @@ if config['read'] == 'yes' and not request['sets']:
     df = pd.read_csv(f'store csv/{whatdoyouwanttoread[int(get) - 1]}')
     get = int(input("ใส่รหัสนักเรียน: "))
 else:
-    df = pd.read_csv(f'store csv/{request['file']}.csv')
-    get = int(request['SID'])
+    df = pd.read_csv(rf'{request['file']}')
+    try:
+        get = int(request['SID'])
+    except:
+        print("Invalid SID, please enter a valid number.")
 print(df)
 names = df.iloc[:, 0].tolist()
 values = df.iloc[:, config["startvalue"]-1:].values

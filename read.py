@@ -15,8 +15,11 @@ if config['read'] == 'yes' and not request['sets']:
     get = int(input("ใส่รหัสนักเรียน: "))
 else:
     #df = pd.read_csv(f'store csv/{os.listdir('store csv')[request['sets'] - 1]}')
-    df = pd.read_csv(f'store csv/{request['file']}.csv')
-    get = int(request['SID'])
+    df = pd.read_csv(rf'{request['file']}')
+    try:
+        get = int(request['SID'])
+    except:
+        print("Invalid SID, please enter a valid number.")
 
 
     

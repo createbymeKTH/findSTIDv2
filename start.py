@@ -1,6 +1,8 @@
 import subprocess
 import os
 import tkinter,json
+from tkinter import filedialog
+import tkinter as tk
 print(3)
 window = tkinter.Tk()
 window.title("Start")
@@ -12,7 +14,6 @@ with open('request/request.json', 'r') as f:
         request = json.load(f)
 def startintegrate():
     request["SID"] = input_text.get("1.0", "end-1c")
-    request["fileconvert"] = input_text1.get("1.0", "end-1c")
     current_directory = os.getcwd()
     print(current_directory)
 
@@ -20,13 +21,40 @@ def startintegrate():
     with open('request/request.json', 'w') as f:
             json.dump(request,f,indent=4)
     subprocess.Popen(["python", script_path])
-
-    
+def open_file():
+    filepath = filedialog.askopenfilename(
+        title="Select a file",
+        filetypes=(("All files", "*.*"),
+                   ("Image files", "*.jpg;*.jpeg;*.png;*.bmp"),
+                   ("Text files", "*.txt"))
+    )
+    if filepath:
+        request["fileconvert"] = filepath
+        with open('request/request.json', 'w') as f:
+            json.dump(request,f,indent=4)
+def open_file1():
+    filepath = filedialog.askopenfilename(
+        title="Select a file",
+        filetypes=(("All files", "*.*"),
+                   ("Image files", "*.jpg;*.jpeg;*.png;*.bmp"),
+                   ("Text files", "*.txt"))
+    )
+    if filepath:
+        request["file"] = filepath
+        with open('request/request.json', 'w') as f:
+            json.dump(request,f,indent=4)
+def open_folder():
+    folder_path = filedialog.askdirectory(title="Select a folder")
+    if folder_path:
+        request["folder"] = folder_path
+        with open('request/request.json', 'w') as f:
+            json.dump(request,f,indent=4)
+        print(folder_path)
+        print(request["folder"])
 def read():
     current_directory = os.getcwd()
     print(current_directory)
-    #request["SID"] = input_text.get("1.0", "end-1c")
-    request["file"] = input_text2.get("1.0", "end-1c")
+    request["SID"] = input_text.get("1.0", "end-1c")
     with open('request/request.json', 'w') as f:
         json.dump(request,f,indent=4)
     script_path = os.path.join(current_directory, "read.py")
@@ -34,8 +62,7 @@ def read():
 def readfully():
     current_directory = os.getcwd()
     print(current_directory)
-    #request["SID"] = input_text.get("1.0", "end-1c")
-    request["file"] = input_text2.get("1.0", "end-1c")
+    request["SID"] = input_text.get("1.0", "end-1c")
     with open('request/request.json', 'w') as f:
         json.dump(request,f,indent=4)
     script_path = os.path.join(current_directory, "READFULLFILEWITHOUTXLSX.py")
@@ -49,6 +76,7 @@ def sets():
 
     with open('request/request.json', 'w') as f:
         json.dump(request,f,indent=4)
+
 seta = tkinter.Button(window, text=f"{request["sets"]}", command=sets)
 seta.pack(pady=0)
 
@@ -68,12 +96,18 @@ label = tkinter.Label(window, text="รหัสนักเรียน ที�
 label.pack(pady=0)
 input_text = tkinter.Text(window, height=1, width=30)
 input_text.pack(pady=0)
-label = tkinter.Label(window, text="ชื่อไฟล์ที่อยากเเปลงข้อมูล ใน folder incsv (ปุ่ม calculate)", bg="white")
+label = tkinter.Label(window, text="ชื่อไฟล์ที่อยากเเปลงข้อมูล (ปุ่ม calculate)", bg="white")
 label.pack(pady=0)
-input_text1 = tkinter.Text(window, height=1, width=30)
-input_text1.pack(pady=0)
-label = tkinter.Label(window, text="ชื่อไฟล์ที่อยากดู ใน folder store csv (ปุ่ม read , readfully)", bg="white")
+btn = tk.Button(window, text="Open File", command=open_file)
+btn.pack(pady=0)
+#input_text1 = tkinter.Text(window, height=1, width=30)
+#input_text1.pack(pady=0)
+label = tkinter.Label(window, text="ชื่อไฟล์ที่อยากดู (ปุ่ม read , readfully)", bg="white")
 label.pack(pady=0)
-input_text2 = tkinter.Text(window, height=1, width=30)
-input_text2.pack(pady=0)
+btn1 = tk.Button(window, text="Open File", command=open_file1)
+btn1.pack(pady=0)
+label = tkinter.Label(window, text="save folder path", bg="white")
+label.pack(pady=0)
+btn = tk.Button(window, text="Open Folder", command=open_folder)
+btn.pack(pady=0)
 window.mainloop()
