@@ -1,12 +1,6 @@
 {
     "SID": "",
     "sets": true,
-<<<<<<< HEAD
     "file": "output",
     "fileconvert": ""
-=======
-    "file": "C:/Users/onxiw/Desktop/projecthtc - \u0e2a\u0e33\u0e40\u0e19\u0e32/store csv/output.csv",
-    "fileconvert": "C:/Users/onxiw/Desktop/projecthtc - \u0e2a\u0e33\u0e40\u0e19\u0e32/incsv/das.csv",
-    "folder": "C:/Users/onxiw/Desktop"
->>>>>>> eca9063 (Added root route)
 }
